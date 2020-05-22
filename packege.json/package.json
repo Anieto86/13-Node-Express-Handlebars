@@ -1,0 +1,25 @@
+{
+  "name": "13-node-express-handlebars",
+  "version": "1.0.0",
+  "description": "Homework 13 # Node Express Handlebars",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anieto86/13-Node-Express-Handlebars.git"
+  },
+  "keywords": [
+    "burger"
+  ],
+  "author": "alvaro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anieto86/13-Node-Express-Handlebars/issues"
+  },
+  "homepage": "https://github.com/Anieto86/13-Node-Express-Handlebars#readme"
+}
