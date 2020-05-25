@@ -1,14 +1,12 @@
-
--- 3 Created table
-
+-- db BURGER
 DROP DATABASE IF EXISTS burgers_db;
 CREATE DATABASE burgers_db;
 
 USE burgers_db;
 
-
+-- BURGER TABLE
 CREATE TABLE burgers (
-id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+id INT NOT NULL AUTO_INCREMENT,
 burger_name VARCHAR (30) UNIQUE NOT NULL
 devoured  BOOLEAN NOT NULL
 PRIMARY KEY (id),
