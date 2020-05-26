@@ -10,9 +10,9 @@ var connection = require("../config/connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 var orm = {
-  selectAll: function(,) {
-    var queryString = "SELECT * FROM ?? WHERE ?? = ?";
-    connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
+  selectAll: function(table) {
+    var queryString = "SELECT * FROM ??";
+    connection.query(queryString, [table], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
