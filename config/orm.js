@@ -10,29 +10,26 @@ var connection = require("../config/connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 var orm = {
-  selectAll: function(table) {
+   SelectAll: async function(table, cb) {
     var queryString = "SELECT * FROM ??";
-    connection.query(queryString, [table], function(err, result) {
+   return await  connection.query(queryString, [table,], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
+    
     });
   },
-  insertOne: function(whatToSelect, table, orderCol) {
-    var queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
+  insertOne: async function( table, insert) {
+    var queryString = "INSET INTO ?? VALUE ??";
     console.log(queryString);
-    connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
+    return await connection.query(queryString, [table, insert], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
   },
-  updateOne: function(table, tableTwo, tableOne, tableTwo) {
-    var queryString =
-      "SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";
-
-    connection.query(
-      queryString,
-      [table, table, tableOne, tableTwo, tableTwo, tableTwo, tableOne, table],
-      function(err, result) {
+  updateOne:async function(table, insert) {
+    var queryString = "INSET INTO ?? VALUE ??";
+    return await   connection.query(
+      queryString, [table, insert],function(err, result) {
         if (err) throw err;
         console.log(result);
       }

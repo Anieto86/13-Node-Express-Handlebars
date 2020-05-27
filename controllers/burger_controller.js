@@ -7,10 +7,11 @@ var burger = require("../model/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+    burger.SelectAll(function(data) {
       var burgerObject = {
         burger: data // remember the datahere is called burger
       };
+      console.log("this is the burger object")
       console.log(burgerObject);
       res.render("index", burgerObject);
     });
@@ -19,7 +20,7 @@ router.get("/", function(req, res) {
   router.post("/api/burger", function(req, res) {
     burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result){
     // Send back the ID of the new quote
-      res.jason ({id:result.insertId})
+      res.json ({id:result.insertId})
     });
   });
   

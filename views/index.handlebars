@@ -1,10 +1,39 @@
-
-
+<h1>Burger!</h1>
 <ul>
 {{#each burger}}
 {{#unless devoured}}
-<p>burger      </p>
-<P>      </P>
-{{/each}}
+<p>burger</p>
+<P> {{burger_name}}</P>
 {{/unless}}
+{{/each}}
 </ul>
+
+<h2> Devored </h2>
+<ul>
+{{#each burger}}
+{{#if devoured}}
+<p>burger</p>
+<P> {{burger_name}}</P>
+{{/if}}
+{{/each}}
+</ul>
+
+
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+  
+ 
+    <input type="radio" name="sleepy" value="0"> Devored </div> 
+    <br>
+
+  <button type="submit">Add Burger</button>
+
+</form>
