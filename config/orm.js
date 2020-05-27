@@ -25,13 +25,13 @@ var orm = {
       console.log(result);
     });
   },
-  updateOne: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
+  updateOne: function(table, tableTwo, tableOne, tableTwo) {
     var queryString =
       "SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";
 
     connection.query(
       queryString,
-      [tableOneCol, tableOneCol, tableOne, tableTwo, tableTwo, tableTwoForeignKey, tableOne, tableOneCol],
+      [table, table, tableOne, tableTwo, tableTwo, tableTwo, tableOne, table],
       function(err, result) {
         if (err) throw err;
         console.log(result);
